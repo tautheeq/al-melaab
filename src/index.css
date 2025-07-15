@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Tajawal:wght@300;400;500;700;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Football League Design System - Arabic/RTL Support */
+
+@layer base {
+  :root {
+    /* Football-inspired color palette */
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+
+    /* Primary: Football pitch green */
+    --primary: 142 76% 36%;
+    --primary-foreground: 0 0% 98%;
+    --primary-glow: 142 76% 46%;
+
+    /* Secondary: Trophy gold */
+    --secondary: 43 74% 66%;
+    --secondary-foreground: 240 10% 3.9%;
+
+    /* Accent: Championship blue */
+    --accent: 221 83% 53%;
+    --accent-foreground: 0 0% 98%;
+
+    --muted: 210 40% 96%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 142 76% 36%;
+
+    --radius: 0.75rem;
+
+    /* Football-themed gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-trophy: linear-gradient(135deg, hsl(var(--secondary)), hsl(43 84% 76%));
+    --gradient-field: linear-gradient(180deg, hsl(142 86% 26%), hsl(142 76% 36%));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 100%);
+
+    /* Shadows with team colors */
+    --shadow-primary: 0 10px 30px -10px hsl(var(--primary) / 0.3);
+    --shadow-trophy: 0 8px 25px -8px hsl(var(--secondary) / 0.4);
+    --shadow-glow: 0 0 40px hsl(var(--primary-glow) / 0.2);
+
+    /* Animation timings */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 142 76% 46%;
+    --primary-foreground: 240 10% 3.9%;
+    --primary-glow: 142 86% 56%;
+
+    --secondary: 43 84% 76%;
+    --secondary-foreground: 240 10% 3.9%;
+
+    --accent: 221 83% 63%;
+    --accent-foreground: 240 10% 3.9%;
+
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 100%);
+    --shadow-primary: 0 10px 30px -10px hsl(var(--primary) / 0.5);
+  }
+
+  /* Arabic typography and RTL support */
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-tajawal;
+    direction: rtl;
+  }
+
+  /* Arabic text styling */
+  .arabic-text {
+    font-family: 'Amiri', serif;
+    line-height: 1.8;
+  }
+
+  .arabic-heading {
+    font-family: 'Tajawal', sans-serif;
+    font-weight: 700;
+  }
+
+  /* Football-specific animations */
+  @keyframes ball-bounce {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-10px) rotate(180deg); }
+  }
+
+  @keyframes score-celebration {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+  }
+
+  @keyframes stadium-wave {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(5px); }
+  }
+
+  .ball-bounce {
+    animation: ball-bounce 2s ease-in-out infinite;
+  }
+
+  .score-celebration {
+    animation: score-celebration 0.6s ease-in-out;
+  }
+
+  .stadium-wave {
+    animation: stadium-wave 3s ease-in-out infinite;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
